@@ -16,4 +16,5 @@ class AppStrings {
 // caching keys
   static String CACHED_REPOS = "CACHED_REPOS";
   static String IS_DARK_CACHE = "IS_DARK_CACHE";
+  static String REPOS_BOX = 'REPOS_BOX';
 }

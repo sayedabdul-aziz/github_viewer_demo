@@ -42,20 +42,13 @@ class GithubViewerRepoImpl implements GithubViewerRepo {
   Future<Either<Failure, Repo>> getRepoDetails(String path) async {
     if (await checkInternet.isConnected) {
       try {
-        // - get all repos and caching it to get it offline
         var remoteRepos = await remotereposdata.getRepoData(path);
-        // localeDataSource.cacheRepos(remoteRepos);
         return Right(remoteRepos);
       } on ServerException {
         return Left(ServerFailure());
       }
     } else {
-      // try {
-      //   // var cachedPosts = await localeDataSource.getCachedRepos();
-      //   // return Right(cachedPosts);
-      // } on EmptyCachedException {
-      return Left(CachedReposFailure());
-      // }
+      return Left((InternetFailure()));
     }
   }
 }

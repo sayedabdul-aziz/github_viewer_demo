@@ -1,57 +1,117 @@
 import 'package:github_viewer_demo/features/repos/domain/entities/repo.dart';
-
+import 'package:hive_flutter/hive_flutter.dart';
 import 'owner.dart';
+part 'repo_model.g.dart';
 
+@HiveType(typeId: 0)
 class RepoModel extends Repo {
   @override
+  @HiveField(0)
   final int id;
+
+  @HiveField(1)
   final String? nodeId;
+
   @override
+  @HiveField(2)
   final String name;
+
+  @HiveField(3)
   final String? fullName;
+
+  @HiveField(4)
   final bool? private;
+
+  @HiveField(5)
   final Owner? owner;
+
+  @HiveField(6)
   final String? htmlUrl;
+
+  @HiveField(7)
   final String? desc;
+
+  @HiveField(8)
   final bool? fork;
+
   @override
+  @HiveField(9)
   final String url;
+
+  @HiveField(10)
   final String? forksUrl;
+
+  @HiveField(11)
   final String? keysUrl;
+
+  @HiveField(12)
   final String? collaboratorsUrl;
+  @HiveField(13)
   final String? teamsUrl;
+  @HiveField(14)
   final String? hooksUrl;
+  @HiveField(15)
   final String? issueEventsUrl;
+  @HiveField(16)
   final String? eventsUrl;
+  @HiveField(17)
   final String? assigneesUrl;
+  @HiveField(18)
   final String? branchesUrl;
+  @HiveField(19)
   final String? tagsUrl;
+  @HiveField(20)
   final String? blobsUrl;
+  @HiveField(21)
   final String? gitTagsUrl;
+  @HiveField(22)
   final String? gitRefsUrl;
+  @HiveField(23)
   final String? treesUrl;
+  @HiveField(24)
   final String? statusesUrl;
+  @HiveField(25)
   final String? languagesUrl;
+  @HiveField(26)
   final String? stargazersUrl;
+  @HiveField(27)
   final String? contributorsUrl;
+  @HiveField(28)
   final String? subscribersUrl;
+  @HiveField(29)
   final String? subscriptionUrl;
+  @HiveField(30)
   final String? commitsUrl;
+  @HiveField(31)
   final String? gitCommitsUrl;
+  @HiveField(32)
   final String? commentsUrl;
+  @HiveField(33)
   final String? issueCommentUrl;
+  @HiveField(34)
   final String? contentsUrl;
+  @HiveField(35)
   final String? compareUrl;
+  @HiveField(36)
   final String? mergesUrl;
+  @HiveField(37)
   final String? archiveUrl;
+  @HiveField(38)
   final String? downloadsUrl;
   @override
+  @HiveField(39)
   final String issuesUrl;
+  @HiveField(40)
   final String? pullsUrl;
+  @HiveField(41)
   final String? milestonesUrl;
+  @HiveField(42)
   final String? notificationsUrl;
+  @HiveField(43)
   final String? labelsUrl;
+  @HiveField(44)
   final String? releasesUrl;
+  @HiveField(45)
   final String? deploymentsUrl;
 
   const RepoModel({
@@ -163,53 +223,4 @@ class RepoModel extends Repo {
         releasesUrl: json['releases_url'] as String,
         deploymentsUrl: json['deployments_url'] as String,
       );
-
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'node_id': nodeId,
-        'name': name,
-        'full_name': fullName,
-        'private': private,
-        'owner': owner!.toJson(),
-        'html_url': htmlUrl,
-        'description': description,
-        'fork': fork,
-        'url': url,
-        'forks_url': forksUrl,
-        'keys_url': keysUrl,
-        'collaborators_url': collaboratorsUrl,
-        'teams_url': teamsUrl,
-        'hooks_url': hooksUrl,
-        'issue_events_url': issueEventsUrl,
-        'events_url': eventsUrl,
-        'assignees_url': assigneesUrl,
-        'branches_url': branchesUrl,
-        'tags_url': tagsUrl,
-        'blobs_url': blobsUrl,
-        'git_tags_url': gitTagsUrl,
-        'git_refs_url': gitRefsUrl,
-        'trees_url': treesUrl,
-        'statuses_url': statusesUrl,
-        'languages_url': languagesUrl,
-        'stargazers_url': stargazersUrl,
-        'contributors_url': contributorsUrl,
-        'subscribers_url': subscribersUrl,
-        'subscription_url': subscriptionUrl,
-        'commits_url': commitsUrl,
-        'git_commits_url': gitCommitsUrl,
-        'comments_url': commentsUrl,
-        'issue_comment_url': issueCommentUrl,
-        'contents_url': contentsUrl,
-        'compare_url': compareUrl,
-        'merges_url': mergesUrl,
-        'archive_url': archiveUrl,
-        'downloads_url': downloadsUrl,
-        'issues_url': issuesUrl,
-        'pulls_url': pullsUrl,
-        'milestones_url': milestonesUrl,
-        'notifications_url': notificationsUrl,
-        'labels_url': labelsUrl,
-        'releases_url': releasesUrl,
-        'deployments_url': deploymentsUrl,
-      };
 }

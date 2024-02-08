@@ -5,11 +5,17 @@ import 'package:github_viewer_demo/core/themes/app_theme.dart';
 import 'package:github_viewer_demo/core/themes/cubit/theme_cubit.dart';
 import 'package:github_viewer_demo/core/themes/cubit/theme_state.dart';
 import 'package:github_viewer_demo/core/util/routers.dart';
+import 'package:github_viewer_demo/features/repos/data/models/repo_model/owner.dart';
+import 'package:github_viewer_demo/features/repos/data/models/repo_model/repo_model.dart';
 import 'package:github_viewer_demo/features/repos/presentation/view-model/all-repos-bloc/repos_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await di.init();
+  Hive.registerAdapter(RepoModelAdapter());
+  Hive.registerAdapter(OwnerAdapter());
   runApp(const MyApp());
 }
 

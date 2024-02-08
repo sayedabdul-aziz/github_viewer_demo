@@ -10,6 +10,7 @@ import 'package:github_viewer_demo/features/repos/domain/use_cases/get_all_repos
 import 'package:github_viewer_demo/features/repos/domain/use_cases/get_repo_details.dart';
 import 'package:github_viewer_demo/features/repos/presentation/view-model/all-repos-bloc/repos_bloc.dart';
 import 'package:github_viewer_demo/features/repos/presentation/view-model/repo-details-bloc/repo_details_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -18,6 +19,7 @@ final sl = GetIt.instance;
 
 Future<void> init() async {
   // init local
+  Hive.initFlutter();
   await AppLocal.init();
 // Bloc
   sl.registerFactory(() => ReposBloc(getAllReposUseCase: sl()));
