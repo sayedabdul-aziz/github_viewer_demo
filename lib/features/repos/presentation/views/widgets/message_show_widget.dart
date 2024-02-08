@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:github_viewer_demo/core/strings/strings.dart';
-import 'package:github_viewer_demo/core/util/app_colors.dart';
 import 'package:github_viewer_demo/core/util/app_text_styles.dart';
 
 class MessageShowWidget extends StatelessWidget {
@@ -16,12 +15,12 @@ class MessageShowWidget extends StatelessWidget {
           Icon(
             Icons.signal_wifi_connected_no_internet_4_rounded,
             size: 80,
-            color: AppColors.lightPrimaryColor,
+            color: Theme.of(context).primaryColor,
           ),
           const Gap(30),
           Text(
-            INTERNET_FAILURE_MESSAGE,
-            style: getbodyStyle(color: Theme.of(context).primaryColorLight),
+            AppStrings.INTERNET_FAILURE_MESSAGE,
+            style: getbodyStyle(color: Theme.of(context).primaryColorDark),
           ),
         ],
       ),

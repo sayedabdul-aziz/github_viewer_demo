@@ -106,12 +106,14 @@ class RepoModel extends Repo {
             name: name,
             description: desc ?? '',
             issuesUrl: issuesUrl,
-            forks: forksUrl ?? "",
+            forks: 0,
             url: url,
             auther: fullName ?? "",
             createdAt: '',
             updatedAt: '',
-            subscribers: subscribersUrl ?? "");
+            stars: 0,
+            watchers: 0,
+            subscribers: 0);
 
   factory RepoModel.fromJson(Map<String, dynamic> json) => RepoModel(
         id: json['id'] as int,

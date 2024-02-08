@@ -4,10 +4,11 @@ abstract class CheckInternet {
   Future<bool> get isConnected;
 }
 
-class checkInternetImpl implements CheckInternet {
+class CheckInternetImpl implements CheckInternet {
   final InternetConnectionChecker checkInternet;
 
-  checkInternetImpl(this.checkInternet);
+  CheckInternetImpl(this.checkInternet);
 
+  @override
   Future<bool> get isConnected => checkInternet.hasConnection;
 }

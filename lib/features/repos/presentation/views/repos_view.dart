@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:github_viewer_demo/core/widgets/snackbar_message.dart';
-import 'package:github_viewer_demo/features/repos/presentation/view-model/repos_bloc.dart';
+import 'package:github_viewer_demo/features/repos/presentation/view-model/all-repos-bloc/repos_bloc.dart';
 import 'package:github_viewer_demo/features/repos/presentation/views/widgets/message_show_widget.dart';
 import 'package:github_viewer_demo/features/repos/presentation/views/widgets/repo_card_widget.dart';
 import 'package:github_viewer_demo/features/repos/presentation/views/widgets/toggle_theme_widget.dart';

@@ -21,13 +21,13 @@ class ReposLocaleDataSourceImpl implements ReposLocaleDataSource {
     List reposModelToJson = reposModels
         .map<Map<String, dynamic>>((reposModel) => reposModel.toJson())
         .toList();
-    pref.setString(CACHED_REPOS, json.encode(reposModelToJson));
+    pref.setString(AppStrings.CACHED_REPOS, json.encode(reposModelToJson));
     return Future.value(unit);
   }
 
   @override
   Future<List<RepoModel>> getCachedRepos() {
-    var jsonString = pref.getString(CACHED_REPOS);
+    var jsonString = pref.getString(AppStrings.CACHED_REPOS);
     if (jsonString != null) {
       List decodedData = json.decode(jsonString);
       List<RepoModel> jsonTorepoModel = decodedData
@@ -38,4 +38,6 @@ class ReposLocaleDataSourceImpl implements ReposLocaleDataSource {
       throw EmptyCachedException();
     }
   }
+
+  
 }

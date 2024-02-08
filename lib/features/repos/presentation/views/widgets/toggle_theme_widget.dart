@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:github_viewer_demo/core/themes/bloc/theme_bloc.dart';
-import 'package:github_viewer_demo/core/themes/bloc/theme_event.dart';
-import 'package:github_viewer_demo/core/themes/bloc/theme_state.dart';
+import 'package:github_viewer_demo/core/themes/cubit/theme_cubit.dart';
+import 'package:github_viewer_demo/core/themes/cubit/theme_state.dart';
 import 'package:github_viewer_demo/core/util/app_colors.dart';
 
 class ToggleThemeWidget extends StatelessWidget {
@@ -13,29 +12,29 @@ class ToggleThemeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ThemeBloc, ThemeState>(
+    return BlocBuilder<ThemeCubit, ThemeState>(
       builder: (context, state) {
-        bool isDark = state.isDarkTheme;
+        bool isDark = context.read<ThemeCubit>().isDark;
         return Container(
           margin: const EdgeInsets.only(right: 10),
           padding: const EdgeInsets.all(3),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(60),
-              color: AppColors.cardColor),
+              color: isDark ? AppColors.black : AppColors.cardColor),
           child: InkWell(
             onTap: () {
-              context.read<ThemeBloc>().add(ChangeTheme());
+              context.read<ThemeCubit>().updateTheme(!isDark);
             },
             child: Row(
               children: [
                 CircleAvatar(
                   radius: 15,
                   backgroundColor:
-                      isDark ? AppColors.lightPrimaryColor : Colors.transparent,
+                      isDark ? AppColors.darkPrimaryColor : Colors.transparent,
                   child: Icon(
                     Icons.dark_mode_rounded,
                     color:
-                        isDark ? AppColors.white : AppColors.lightPrimaryColor,
+                        isDark ? AppColors.black : AppColors.lightPrimaryColor,
                     size: 17,
                   ),
                 ),
@@ -47,7 +46,7 @@ class ToggleThemeWidget extends StatelessWidget {
                   child: Icon(
                     Icons.light_mode,
                     color:
-                        isDark ? AppColors.lightPrimaryColor : AppColors.white,
+                        isDark ? AppColors.darkPrimaryColor : AppColors.white,
                     size: 17,
                   ),
                 )

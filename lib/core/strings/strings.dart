@@ -1,15 +1,19 @@
-// FAILURE Message
-const String SERVER_FAILURE_MESSAGE = 'Please try again later .';
-const String EMPTY_CACHE_FAILURE_MESSAGE = 'No Data';
-const String INTERNET_FAILURE_MESSAGE = 'Please Check your Internet Connection';
+class AppStrings {
+  // FAILURE Message
+  static String SERVER_FAILURE_MESSAGE = 'Please try again later .';
+  static String EMPTY_CACHE_FAILURE_MESSAGE = 'No Data';
+  static String INTERNET_FAILURE_MESSAGE =
+      'Please Check your Internet Connection';
 
 // endpoints
 // https://api.github.com/repositories
-const String BASE_URL = 'https://api.github.com';
-const String REPO_ENDPOINT = '/repositories';
+  static String BASE_URL = 'https://api.github.com';
+  static String REPO_ENDPOINT = '/repositories';
 
 // App Strings
-const String INTERNET_SUCCESS = 'Your Internet is back';
+  static String INTERNET_SUCCESS = 'Your Internet is back';
 
 // caching keys
-const CACHED_REPOS = "CACHED_REPOS";
+  static String CACHED_REPOS = "CACHED_REPOS";
+  static String IS_DARK_CACHE = "IS_DARK_CACHE";
+}

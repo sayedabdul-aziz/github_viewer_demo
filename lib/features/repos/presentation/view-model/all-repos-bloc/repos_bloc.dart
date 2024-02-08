@@ -26,16 +26,16 @@ class ReposBloc extends Bloc<ReposEvent, ReposState> {
   }
   ReposState _mapEithertoState(Either<Failure, List<Repo>> repos) {
     return repos.fold(
-        (failure) => ErrorReposState(message: _FailureToMessage(failure)),
+        (failure) => ErrorReposState(message: _failureToMessage(failure)),
         (repos) => LoadedReposState(repos: repos));
   }
 
-  String _FailureToMessage(Failure failure) {
+  String _failureToMessage(Failure failure) {
     switch (failure.runtimeType) {
       case ServerFailure:
-        return SERVER_FAILURE_MESSAGE;
+        return AppStrings.SERVER_FAILURE_MESSAGE;
       case InternetFailure:
-        return INTERNET_FAILURE_MESSAGE;
+        return AppStrings.INTERNET_FAILURE_MESSAGE;
       default:
         return 'Unexpected Failure, Plz Try Again !!';
     }

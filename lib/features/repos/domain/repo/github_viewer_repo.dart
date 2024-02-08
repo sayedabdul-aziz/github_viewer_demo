@@ -5,4 +5,5 @@ import '../../../../core/error/failure.dart';
 
 abstract class GithubViewerRepo {
   Future<Either<Failure, List<Repo>>> getAllRepos();
+  Future<Either<Failure, Repo>> getRepoDetails(String path);
 }

@@ -1,20 +1,23 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppLocal {
-  AppLocal._();
-  static cacheData(String key, value) async {
-    final pref = await SharedPreferences.getInstance();
+  static late SharedPreferences sharedPreferences;
+
+  static init() async {
+    sharedPreferences = await SharedPreferences.getInstance();
+  }
+
+  cacheData(String key, value) async {
     if (value is bool) {
-      await pref.setBool(key, value);
+      await sharedPreferences.setBool(key, value);
     } else if (value is String) {
-      await pref.setString(key, value);
+      await sharedPreferences.setString(key, value);
     } else {
-      await pref.setDouble(key, value);
+      await sharedPreferences.setDouble(key, value);
     }
   }
 
-  static Future<bool> getData(String key) async {
-    final pref = await SharedPreferences.getInstance();
-    return pref.getBool(key) ?? false;
+  getData(String key) {
+    return sharedPreferences.get(key);
   }
 }
