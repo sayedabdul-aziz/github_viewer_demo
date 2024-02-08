@@ -21,6 +21,14 @@ Follow the steps below to set up and run the project locally:
 
 - Make sure you have Flutter and Dart installed on your machine. If not, follow the official Flutter installation guide: [Flutter - Get Started](https://flutter.dev/docs/get-started/install).
 
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/sayedabdul-aziz/github_viewer_demo.git
+
+
 ### Screenshots
  <br>
 <div style="display: flex; flex-direction: row;">
@@ -37,10 +45,3 @@ Follow the steps below to set up and run the project locally:
 
  <br>
   <br>
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/sayedabdul-aziz/github_viewer_demo.git
-
