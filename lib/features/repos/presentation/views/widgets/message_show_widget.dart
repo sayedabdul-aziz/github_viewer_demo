@@ -16,7 +16,7 @@ class MessageShowWidget extends StatelessWidget {
           Icon(
             Icons.signal_wifi_connected_no_internet_4_rounded,
             size: 80,
-            color: AppColors.primaryColor,
+            color: AppColors.lightPrimaryColor,
           ),
           const Gap(30),
           Text(

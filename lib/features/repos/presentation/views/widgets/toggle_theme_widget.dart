@@ -31,10 +31,11 @@ class ToggleThemeWidget extends StatelessWidget {
                 CircleAvatar(
                   radius: 15,
                   backgroundColor:
-                      isDark ? AppColors.primaryColor : Colors.transparent,
+                      isDark ? AppColors.lightPrimaryColor : Colors.transparent,
                   child: Icon(
                     Icons.dark_mode_rounded,
-                    color: isDark ? AppColors.white : AppColors.primaryColor,
+                    color:
+                        isDark ? AppColors.white : AppColors.lightPrimaryColor,
                     size: 17,
                   ),
                 ),
@@ -42,10 +43,11 @@ class ToggleThemeWidget extends StatelessWidget {
                 CircleAvatar(
                   radius: 15,
                   backgroundColor:
-                      isDark ? Colors.transparent : AppColors.primaryColor,
+                      isDark ? Colors.transparent : AppColors.lightPrimaryColor,
                   child: Icon(
                     Icons.light_mode,
-                    color: isDark ? AppColors.primaryColor : AppColors.white,
+                    color:
+                        isDark ? AppColors.lightPrimaryColor : AppColors.white,
                     size: 17,
                   ),
                 )

@@ -9,5 +9,7 @@ const String BASE_URL = 'https://api.github.com';
 const String REPO_ENDPOINT = '/repositories';
 
 // App Strings
-
 const String INTERNET_SUCCESS = 'Your Internet is back';
+
+// caching keys
+const CACHED_REPOS = "CACHED_REPOS";
