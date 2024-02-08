@@ -4,19 +4,15 @@ import 'license.dart';
 import 'owner.dart';
 
 class RepoDetailsModel extends Repo {
-  @override
   final int id;
   String? nodeId;
-  @override
   final String name;
   String? fullName;
   bool? private;
   Owner? owner;
   String? htmlUrl;
-  @override
   String description;
   bool? fork;
-  @override
   final String url;
   String? forksUrl;
   String? keysUrl;
@@ -47,7 +43,6 @@ class RepoDetailsModel extends Repo {
   String? mergesUrl;
   String? archiveUrl;
   String? downloadsUrl;
-  @override
   String issuesUrl;
   String? pullsUrl;
   String? milestonesUrl;
@@ -55,9 +50,7 @@ class RepoDetailsModel extends Repo {
   String? labelsUrl;
   String? releasesUrl;
   String? deploymentsUrl;
-  @override
   String createdAt;
-  @override
   String updatedAt;
   String? pushedAt;
   String? gitUrl;
@@ -86,10 +79,8 @@ class RepoDetailsModel extends Repo {
   bool? webCommitSignoffRequired;
   List<dynamic>? topics;
   String? visibility;
-  @override
   int forks;
   int? openIssues;
-  @override
   int watchers;
   String? defaultBranch;
   dynamic tempCloneToken;
@@ -187,7 +178,7 @@ class RepoDetailsModel extends Repo {
             forks: forks,
             url: url,
             stars: stargazersCount ?? 0,
-            watchers: watchers ?? 0,
+            watchers: watchers,
             auther: fullName ?? "",
             createdAt: createdAt,
             updatedAt: updatedAt,
