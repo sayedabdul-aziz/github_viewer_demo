@@ -34,6 +34,9 @@ Follow the steps below to set up and run the project locally:
   <img src="https://github.com/sayedabdul-aziz/github_viewer_demo/blob/main/screenshots/3.png" height="500">
   <img src="https://github.com/sayedabdul-aziz/github_viewer_demo/blob/main/screenshots/4.png" height="500">
 </div>
+
+ <br>
+  <br>
 ### Installation
 
 1. Clone the repository:
