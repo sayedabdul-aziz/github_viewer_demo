@@ -1,8 +1,4 @@
-
-
-## Flutter Hiring Test 
- 
-### GitHub Repos Viewer
+## GitHub Repos Viewer
 
 This Flutter project is a GitHub repositories viewer that allows you to explore repositories, toggle between light and dark themes, and implement pagination for efficient data loading. Additionally, you can search for specific repositories.
 
@@ -27,12 +23,15 @@ Follow the steps below to set up and run the project locally:
 
    ```bash
    git clone https://github.com/sayedabdul-aziz/github_viewer_demo.git
-
-
-### Screenshots
- <br>
-<div style="display: flex; flex-direction: row;">
+### Preview :
+  <div>
+  <img src="https://github.com/sayedabdul-aziz/github_viewer_demo/blob/main/screenshots/prefiew.gif" height="500">
+   <br>
+  </div>
   
+### Screenshots :
+ 
+<div style="display: flex; flex-direction: row;">
   <img src="https://github.com/sayedabdul-aziz/github_viewer_demo/blob/main/screenshots/1.png" height="500">
   <img src="https://github.com/sayedabdul-aziz/github_viewer_demo/blob/main/screenshots/2.png" height="500">
 </div>
@@ -43,5 +42,4 @@ Follow the steps below to set up and run the project locally:
   <img src="https://github.com/sayedabdul-aziz/github_viewer_demo/blob/main/screenshots/4.png" height="500">
 </div>
 
- <br>
-  <br>
+
