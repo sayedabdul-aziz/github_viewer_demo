@@ -1,26 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:github_viewer_demo/core/util/app_text_styles.dart';
 
 class TextFormFieldWidget extends StatelessWidget {
-  final TextEditingController controller;
-  final bool multiLines;
-  final String name;
+  final Function(String)? onChanged;
   const TextFormFieldWidget({
     Key? key,
-    required this.controller,
-    required this.multiLines,
-    required this.name,
+    this.onChanged,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        child: TextFormField(
-          minLines: multiLines ? 6 : 1,
-          maxLines: multiLines ? 6 : 1,
-          controller: controller,
-          validator: (val) => val!.isEmpty ? "$name Can't be empty" : null,
-          decoration: InputDecoration(hintText: name),
-        ));
+    return Container(
+      height: 50,
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: TextField(
+        style: getbodyStyle(color: Theme.of(context).primaryColorDark),
+        decoration: InputDecoration(
+            border: InputBorder.none,
+            hintText: "Search for repository",
+            hintStyle: getbodyStyle(color: Theme.of(context).primaryColorDark)),
+        onChanged: onChanged,
+      ),
+    );
   }
 }

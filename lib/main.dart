@@ -23,8 +23,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) => ThemeCubit(),
           ),
-          BlocProvider(
-              create: (_) => di.sl<ReposBloc>()..add(GetAllReposEvent())),
+          BlocProvider(create: (_) => di.sl<ReposBloc>()),
         ],
         child: BlocBuilder<ThemeCubit, ThemeState>(builder: (context, state) {
           bool isDark = context.read<ThemeCubit>().isDark;
